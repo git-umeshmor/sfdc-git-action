@@ -1,6 +1,12 @@
-const { jestConfig } = require('@salesforce/sfdx-lwc-jest/config');
-
+// jest.config.js
 module.exports = {
-    ...jestConfig,
-    modulePathIgnorePatterns: ['<rootDir>/.localdevserver']
+  testMatch: [
+    "**/test/specs/**/*.[jt]s?(x)", // include your actual test path
+    "**/?(*.)+(spec|test).[tj]s?(x)"
+  ],
+  testPathIgnorePatterns: [
+    "/node_modules/"
+    // Remove this if it's blocking real tests
+    // "/test/specs/"
+  ]
 };
