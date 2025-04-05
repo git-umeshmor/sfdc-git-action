@@ -6,9 +6,17 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4.2.2
-      - name: Setup Node.js
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/fermium" # Resolves to Node.js v14 LTS (Fermium)
+          node-version: "lts/*" # Use latest LTS version (e.g., v20.x)
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci # or `npm install` if no package-lock.json
+
+      - name: Build project
+        run: npm run build # optional, if you have a build step
+
+      - name: Run tests
+        run: npm test # optional, if you have tests
