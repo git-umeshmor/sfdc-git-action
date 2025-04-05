@@ -6,8 +6,10 @@ jobs:
         steps:
             - name: Get code
               uses: actions/checkout@v4.2.2
-            - name: Install NodeJS
-              uses: actions/setup-node@v23
+            - name: Setup NodeJS 
+              uses: actions/setup-node@v4
+              with:
+                node-version: 'lts/fermium' #Resolves to v14.21.3
             - name: Install dependencies
               run: npm ci
             - name: Run tests
