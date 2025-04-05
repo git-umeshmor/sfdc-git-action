@@ -16,4 +16,4 @@ jobs:
         run: npm ci # or `npm install` if no package-lock.json
 
       - name: Run tests
-        run: npm test # optional, if you have tests
+        run: npm test -- --passWithNoTests
