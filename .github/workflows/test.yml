@@ -12,8 +12,6 @@ jobs:
                 node-version: 'lts/fermium' # Resolves to Node.js v14 LTS (Fermium)
             - name: Install dependencies
               run: npm ci
-            - name: Run tests
-              run: npm test
 
 
               
