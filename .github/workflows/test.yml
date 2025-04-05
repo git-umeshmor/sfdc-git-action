@@ -15,8 +15,5 @@ jobs:
       - name: Install dependencies
         run: npm ci # or `npm install` if no package-lock.json
 
-      - name: Build project
-        run: npm run build # optional, if you have a build step
-
       - name: Run tests
         run: npm test # optional, if you have tests
